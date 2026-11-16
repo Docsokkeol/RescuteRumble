@@ -24,6 +24,8 @@ end
 function s.m1skip(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SKILL_FLIP,tp,id|(1<<32))
 	Duel.Hint(HINT_CARD,tp,id)
+	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(id,0))
+	Duel.SelectCardsFromCodes(tp,0,1,true,false,id)
 	local c=e:GetHandler()
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_FIELD)
